@@ -17,8 +17,9 @@ $ npm install [--save] map-util
 ```js
 'use strict'
 
-const nextVal = require('map-util').nextVal
-const prevVal = require('map-util').prevVal
+const utils = require('map-util')
+const nextVal = utils.nextVal
+const prevVal = utils.prevVal
 
 const map = new Map()
 map.set('1', '1')
@@ -33,6 +34,15 @@ prevVal('2', map) // => '1'
 prevVal('1', map) // => null
 // If we want to wrap around:
 prevVal('1', map, true) // => '2'
+
+// or to get first and last
+utils.first(map)    // => ['1', '1']
+utils.firstKey(map) // => '1'
+utils.firstVal(map) // => '1'
+
+utils.last(map)     // => ['2', '2']
+utils.lastKey(map)  // => '2'
+utils.lastVal(map)  // => '2'
 ```
 
 ## Test

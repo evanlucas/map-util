@@ -38,3 +38,37 @@ test('prevVal', (t) => {
   t.equal(utils.prevVal('3', m), null)
   t.end()
 })
+
+test('first', (t) => {
+  t.throws(function() {
+    utils.first()
+  }, /map must be a Map/)
+
+  const m = new Map()
+  t.equal(utils.first(m), null)
+  t.equal(utils.firstKey(m), null)
+  t.equal(utils.firstVal(m), null)
+  m.set('1', '1')
+  m.set('2', '2')
+  t.deepEqual(utils.first(m), ['1', '1'])
+  t.equal(utils.firstKey(m), '1')
+  t.equal(utils.firstVal(m), '1')
+  t.end()
+})
+
+test('last', (t) => {
+  t.throws(function() {
+    utils.last()
+  }, /map must be a Map/)
+
+  const m = new Map()
+  t.equal(utils.last(m), null)
+  t.equal(utils.lastKey(m), null)
+  t.equal(utils.lastVal(m), null)
+  m.set('1', '1')
+  m.set('2', '2')
+  t.deepEqual(utils.last(m), ['2', '2'])
+  t.equal(utils.lastKey(m), '2')
+  t.equal(utils.lastVal(m), '2')
+  t.end()
+})
