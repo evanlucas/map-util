@@ -32,9 +32,11 @@ test('prevVal', (t) => {
   t.equal(utils.prevVal(null, m), null)
 
   m.set('2', '2')
+  m.set('4', '4')
   t.equal(utils.prevVal('2', m), '1')
-  t.equal(utils.prevVal('1', m, true), '2')
+  t.equal(utils.prevVal('1', m, true), '4')
   t.equal(utils.prevVal('1', m), null)
+  t.equal(utils.prevVal('4', m), '2')
   t.equal(utils.prevVal('3', m), null)
   t.end()
 })
