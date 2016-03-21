@@ -4,8 +4,8 @@ exports.nextVal = require('./lib/next-val')
 exports.prevVal = require('./lib/prev-val')
 
 exports.first = function first(map) {
-  if (!(map instanceof Map)) {
-    throw new TypeError('map must be a Map')
+  if (!(map instanceof Map) && !(map instanceof Set)) {
+    throw new TypeError('map must be a Map or Set')
   }
 
   if (!map.size) {
@@ -34,8 +34,8 @@ exports.firstVal = function firstVal(map) {
 }
 
 exports.last = function last(map) {
-  if (!(map instanceof Map)) {
-    throw new TypeError('map must be a Map')
+  if (!(map instanceof Map) && !(map instanceof Set)) {
+    throw new TypeError('map must be a Map or Set')
   }
 
   if (!map.size) {

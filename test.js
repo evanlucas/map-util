@@ -18,6 +18,15 @@ test('nextVal', (t) => {
   t.equal(utils.nextVal('2', m, true), '1')
   t.equal(utils.nextVal('1', m), '2')
   t.equal(utils.nextVal('3', m), null)
+
+  const s = new Set()
+  t.equal(utils.nextVal(null, s), null)
+  s.add('1')
+  t.equal(utils.nextVal(null, s), null)
+
+  s.add('2')
+  t.equal(utils.nextVal('2', s), null)
+  t.equal(utils.nextVal('2', s, true), '1')
   t.end()
 })
 
