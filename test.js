@@ -83,3 +83,15 @@ test('last', (t) => {
   t.equal(utils.lastVal(m), '2')
   t.end()
 })
+
+test('replace', (t) => {
+  t.throws(() => {
+    utils.replace()
+  }, /map must be a Map or Set/)
+
+  const m = new Map()
+  m.set('a', 1)
+  utils.replace('a', 'b', m)
+  t.equal(m.get('b'), 1)
+  t.end()
+})

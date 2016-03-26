@@ -67,3 +67,13 @@ exports.lastVal = function lastVal(map) {
 
   return null
 }
+
+exports.replace = function replace(from, to, map) {
+  if (!(map instanceof Map) && !(map instanceof Set)) {
+    throw new TypeError('map must be a Map or Set')
+  }
+
+  const o = map.get(from)
+  map.delete(o)
+  map.set(to, o)
+}

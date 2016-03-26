@@ -43,6 +43,11 @@ utils.firstVal(map) // => '1'
 utils.last(map)     // => ['2', '2']
 utils.lastKey(map)  // => '2'
 utils.lastVal(map)  // => '2'
+
+// Replace the key with another key, but keep the value
+utils.replace('2', '10', map)
+console.log(map.get('10'))
+// => '2'
 ```
 
 ## Test
