@@ -1,6 +1,6 @@
 {
   "name": "map-util",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Utilities that make getting prev/next values in a map easier",
   "main": "index.js",
   "scripts": {
