@@ -93,5 +93,6 @@ test('replace', (t) => {
   m.set('a', 1)
   utils.replace('a', 'b', m)
   t.equal(m.get('b'), 1)
+  t.equal(m.has('a'), false)
   t.end()
 })

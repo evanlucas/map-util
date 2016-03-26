@@ -74,6 +74,6 @@ exports.replace = function replace(from, to, map) {
   }
 
   const o = map.get(from)
-  map.delete(o)
+  map.delete(from)
   map.set(to, o)
 }
