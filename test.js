@@ -19,6 +19,10 @@ test('nextVal', (t) => {
   t.equal(utils.nextVal('1', m), '2')
   t.equal(utils.nextVal('3', m), null)
 
+  m.set('3', '1')
+  t.equal(utils.nextVal(utils.firstVal(m), m), '2')
+  t.equal(utils.nextVal(utils.lastVal(m), m), null)
+
   const s = new Set()
   t.equal(utils.nextVal(null, s), null)
   s.add('1')
